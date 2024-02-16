@@ -10,7 +10,7 @@ export const getToken = async () => {
   } else if (VIDEOSDK_TOKEN) {
     return VIDEOSDK_TOKEN;
   } else if (API_AUTH_URL) {
-    const res = await fetch(`${API_AUTH_URL}/get-token`, {
+    const res = await fetch(`${VIDEOSDK_TOKEN}/get-token`, {
       method: "GET",
     });
     const { token } = await res.json();
